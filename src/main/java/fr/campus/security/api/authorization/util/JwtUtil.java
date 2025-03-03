@@ -6,7 +6,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 
 import java.util.Date;
 
-public class JWTUtil {
+public class JwtUtil {
 
     private static final String secret = "my-secret-key";
 

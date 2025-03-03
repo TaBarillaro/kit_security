@@ -32,8 +32,9 @@ public class SecurityConfig {
                 .build();
     }
 
+    @Autowired
     private final AuthenticationConfiguration authenticationConfiguration;
-
+    @Autowired
     private final UserDetailsService userDetailsService;
 
     public SecurityConfig(AuthenticationConfiguration authenticationConfiguration, UserDetailsService userDetailsService) {
@@ -50,14 +51,13 @@ public class SecurityConfig {
     }
     @Bean
     public PasswordEncoder passwordEncoder() {
-        // return new BCryptPasswordEncoder();
+// return new BCryptPasswordEncoder();
         return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
     @Bean
     public AuthenticationManager authenticationManager() throws Exception {
         return authenticationConfiguration.getAuthenticationManager();
     }
-
     // Fake users in memory
     @Bean
     public static UserDetailsService userDetailsService() {

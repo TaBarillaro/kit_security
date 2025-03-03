@@ -2,7 +2,7 @@ package fr.campus.security.api.authorization.controller;
 
 import fr.campus.security.api.authorization.dto.TokenDto;
 import fr.campus.security.api.authorization.dto.UserCredentialsDto;
-import fr.campus.security.api.authorization.util.JWTUtil;
+import fr.campus.security.api.authorization.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -18,7 +18,7 @@ public class AuthController {
 
     @Autowired
     private AuthenticationManager authenticationManager;
-    private JWTUtil jwtUtil = new JWTUtil();
+    private JwtUtil jwtUtil = new JwtUtil();
 
     @PostMapping("/signup")
     public String signup(@RequestBody UserCredentialsDto userCredentialsDto) {
